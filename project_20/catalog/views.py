@@ -31,3 +31,23 @@ def product_list(request, category_slug=None):
         'categories': categories
     }
     return render(request, 'products/product_list.html', context)
+
+def product_detail(request):
+    """Отображает главную страницу с товарами."""
+    products = Product.objects.all()
+    categories = Category.objects.all()  # Получаем все категории
+    context = {
+        'products': products,
+        'categories': categories
+    }
+    return render(request, 'products/product_detail.html', context)
+
+def product_list_by_category(request):
+    """Отображает главную страницу с товарами."""
+    products = Product.objects.all()
+    categories = Category.objects.all()  # Получаем все категории
+    context = {
+        'products': products,
+        'categories': categories
+    }
+    return render(request, 'products/product_list_by_category.html', context)
